@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="../libs/mui/css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/project.css"/>
+		<script src="../libs/mui/js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../libs/jquery/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <div class="mui-input-row mui-search" style="display: inline-block;width: 90%;">
+				<input type="search" class="mui-input-clear" placeholder="">
+			</div>
+		</header>
+		<div class="mui-content" style="background-color: #fff;">
+			<div>
+				<ul class="cars_search_latest">
+					<li><a href="javascript:void(0);">最近查找</a></li>
+					<li id="search"><a href="javascript:void(0);">查找</a></li>
+					<li><a href="javascript:void(0);" id="clearHistory">清空记录</a></li>
+				</ul>
+				<!--历史记录-->
+				<ul class="mui-table-view"></ul>
+				<!--模糊搜索-->
+				<ul class="cars_search_rs"></ul>
+			</div>
+		</div>
+	</body>
+	<script src="../js/cars_search.js" type="text/javascript" charset="utf-8"></script>
+</html>

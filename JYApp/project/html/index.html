@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>主页</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="../libs/mui/css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../libs/mui/css/iconfont.css"/>
+		<script src="../libs/mui/js/mui.min.js"></script>
+        <script src="../libs/jquery/js/jquery.min.js"></script>
+		<style>
+			.index_back{
+				width: 100%;
+				height: 150px;
+				background: url(../images/banner_01.png) no-repeat top left;
+				background-size: 100% 150px;
+                text-align:center;
+			}
+		    .index_back img {
+                width:80px;
+                height:80px;
+                margin-top:35px;
+		    }
+			p {
+				text-indent: 22px;
+                font-size:17px;
+                color: #333;
+			}
+			img{
+				width: 20px;
+				height: 20px;
+			}
+		    .index_user {
+                display:block;
+		    }
+		    .sub_title {
+		        margin:6px 0 6px 20px;
+                font-size:17px;
+                font-weight:bold;
+            }
+            .mui-table-view-cell{
+            	padding: 10px 15px;
+            }
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content index_back">
+            <img src="../images/about_icons_03.png" alt="loading" />
+            <span class="index_user"></span>
+		</div>
+		<div class="mui-content" style="padding-bottom:50px;">
+			<div class="sub_title">业务管理</div>
+			<ul class="mui-table-view mui-table-view-chevron">
+				<li class="mui-table-view-cell" data-choice="crd">
+					<a class="mui-navigate-right" href="task.html">
+						<img class="mui-pull-left" src="../images/index_icons_03.png">
+						<p class='mui-ellipsis'>快速下单</p>
+					</a>
+				</li>
+				<li class="mui-table-view-cell" data-choice="all">
+					<a class='mui-navigate-right' href="taskList.html">
+						<img class="mui-pull-left" src="../images/index_icons_07.png">
+						<p class='mui-ellipsis'>业务单汇总</p>
+					</a>
+				</li>
+			</ul>
+			<div class="sub_title">审批管理</div>
+			<ul class="mui-table-view mui-table-view-chevron">
+				<li class="mui-table-view-cell" data-choice="srd">
+					<a class="mui-navigate-right" href="checkList.html">
+						<img class="mui-pull-left" src="../images/index_icons_11.png">
+						<p class='mui-ellipsis'>快速审核</p>
+					</a>
+				</li>
+				<li class="mui-table-view-cell" data-choice="srd">
+					<a class='mui-navigate-right' href="checkList.html">
+						<img class="mui-pull-left" src="../images/index_icons_07.png">
+						<p class='mui-ellipsis'>业务单汇总</p>
+					</a>
+				</li>
+			</ul>
+			<div class="sub_title">调度管理</div>
+			<ul class="mui-table-view mui-table-view-chevron">
+				<li class="mui-table-view-cell" data-choice="ch">
+					<a class="mui-navigate-right" href="shipList.html">
+						<img class="mui-pull-left" src="../images/index_icons_14.png">
+						<p class='mui-ellipsis'>快速派车</p>
+					</a>
+				</li>
+			</ul>
+			<div class="sub_title">车长报单</div>
+			<ul class="mui-table-view mui-table-view-chevron">
+				<li class="mui-table-view-cell" data-choice="ct">
+					<a class="mui-navigate-right" href="driverList.html">
+						<img class="mui-pull-left" src="../images/index_icons_18.png">
+						<p class='mui-ellipsis'>报单列表</p>
+					</a>
+				</li>
+			</ul>
+			<!--<div class="group_title">业务管理</div>
+			<ul class="mui-table-view mui-table-view-chevron">
+				<li class="mui-table-view-cell" data-choice="task">
+					<a class="mui-navigate-right">
+						<img class="mui-pull-left" src="images/head1.png">
+						<p class='mui-ellipsis'>任务统计</p>
+					</a>
+				</li>
+				<li class="mui-table-view-cell" data-choice="task">
+					<a class='mui-navigate-right'>
+						<img class="mui-pull-left" src="images/head1.png">
+						<p class='mui-ellipsis'>里程统计</p>
+					</a>
+				</li>
+			</ul>-->
+		</div>
+        <nav class="mui-bar mui-bar-tab">
+			<a id="defaultTab" class="mui-tab-item mui-active" href="index.html">
+				<span class="mui-icon mui-icon-home-filled"></span>
+				<span class="mui-tab-label">业务中心</span>
+			</a>
+			<a class="mui-tab-item" href="trailMonitor.html">
+				<span class="mui-icon iconfont icon-guiji"></span>
+				<span class="mui-tab-label">监控中心</span>
+			</a>
+			<a id="about" class="mui-tab-item" href="settings.html">
+				<span class="mui-icon mui-icon-gear-filled"></span>
+				<span class="mui-tab-label">设置</span>
+			</a>
+		</nav>
+		<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

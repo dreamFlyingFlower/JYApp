@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+	    body, html {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+	</style>
+    <link rel="stylesheet" type="text/css" href="../libs/jquery/themes/metro/easyui.css" />  
+    <link rel="stylesheet" type="text/css" href="../libs/jquery/themes/mobile.css" />  
+    <link rel="stylesheet" type="text/css" href="../libs/jquery/themes/icon.css" />  
+    <link rel="stylesheet" type="text/css" href="../libs/jquery/themes/color.css" />
+    <link rel="stylesheet" type="text/css" href="../css/jcss.css"/>
+    <link rel="stylesheet" type="text/css" href="../libs/mui/css/mui.picker.min.css" />
+    <script type="text/javascript" src="../libs/jquery/js/jquery.min.js"></script>  
+    <script type="text/javascript" src="../libs/jquery/jquery.easyui.min.js"></script> 
+    <script type="text/javascript" src="../libs/jquery/jquery.easyui.mobile.js"></script> 
+    <script type="text/javascript" src="../libs/jquery/locale/easyui-lang-zh_CN.js"></script>
+    <title>车台长报单</title>
+    <style type="text/css">
+    	.m-back::before,.m-back::after{
+    		color: #fff;
+    	}
+    	.m-title{
+    		color: #fff;
+    	}
+    </style>
+</head>
+<body>
+    <div id="p1" class="easyui-navpanel">
+        <header style="background-color:#359ff2;">
+			<div class="m-toolbar" style="border:none;">
+				<span id="Span2" class="m-title">派车</span>
+                <div class="m-left" >
+                    <a href="javascript:void(0);" class="easyui-linkbutton m-back" plain="true"  onclick="$.mobile.back()" style="color:#fff;">
+                    	<span style="margin-left: 5px;font-size: 15px;">返回</span>
+                    </a>
+                </div>
+			</div>
+		</header>
+        <div>
+            <form id="dataForm" method="post" enctype="multipart/form-data" novalidate >
+                <table>
+                    <tr>
+                        <td>编号: <input type="text" name="TaskId" value=" " readonly/></td>
+                    </tr>
+                    <tr>
+                        <td>客户名称: <input type="text" name="Name" value=" " readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>计划方量: <input type="text" name="PlanTaskTotal" value=" " readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>车辆要求: <input type="text" name="VehicleType" value=" " readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>施工区域: <input type="text" name="SiteName" value=" " readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>计划开盘时间: <input type="text" name="PlanBeginTime" value=" " readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>计划收盘时间: <input type="text" name="PlanEndTime" value=" " readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>车牌号:<input name="VehicleNum" id="VehicleNum" class="easyui-combobox" 
+                            data-options="valueField:'VehicleNum',textField:'VehicleState',required:true,width:200,mode:'remote'" /></td>
+                    </tr>
+                    <tr>
+                        <td>外协否:<input name="Rent" id="Rent" class="easyui-combobox" data-options="
+                                valueField: 'id',width:200,value:false,
+		                        textField: 'text',
+		                        data: [{
+			                        text: '本部',
+			                        id: false
+		                        },{
+			                        text: '外协',
+			                        id: true
+                                }]" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>车台长:</label><input name="Driver1" id="Driver1" class="easyui-textbox" data-options="width:200,value:'',required:true" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>操作手1:</label><input name="Driver2" id="Driver2" class="easyui-textbox" data-options="width:200,value:'',readonly:true" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>操作手2:</label><input name="Driver3" id="Driver3" class="easyui-textbox" data-options="width:200,value:'',readonly:true" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>数量:</label><input name="Qty" id="Qty" class="easyui-numberbox" data-options="width:200,required:true,value:0" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>派车时间:</label><input name="DisTime" id="DisTime" placeholder="请输入派车时间" readonly/></td>
+                    </tr>
+                    <tr>
+                        <td><label>运输状态:</label><input name="State" id="State" class="easyui-combobox" data-options="
+                                valueField: 'id',width:200,value:'0',readonly:true,
+		                        textField: 'text',
+		                        data: [{
+			                        text: '接收派车',
+			                        id: '0'
+		                        },{
+			                        text: '运输途中',
+			                        id: '1'
+		                        },{
+			                        text: '到达工地',
+			                        id: '2'
+                                },{
+			                        text: '开始卸料',
+			                        id: '3'
+                                },{
+			                        text: '结束卸料',
+			                        id: '4'
+                                },{
+			                        text: '回厂途中',
+			                        id: '5'
+                                },{
+			                        text: '回厂',
+			                        id: '6'
+		                        }]
+                                " /></td>
+                    </tr>
+                    <tr style="display: none;">
+                        <td><label>创建时间:</label><input name="InsertDate" id="InsertDate" class="easyui-datetimebox" data-options="width:200,readonly:true,value:'0'" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>创建人:</label><input name="InsertId" id="InsertId" class="easyui-textbox" data-options="width:200,readonly:true" /></td>
+                    </tr>
+
+                    <!--<%--隐藏字段--%>-->
+                    <tr style="display:none;">
+                        <td><label>塔楼:</label></td>
+                        <td><input name="Tower" id="Tower" class="easyui-numberbox" data-options="width:200,required:true,value:1" /></td>
+                    </tr>
+                    <tr style="display:none;">
+                        <td><label>离厂时间:</label></td>
+                        <td><input name="LeftFacTime" id="LeftFacTime" class="easyui-datetimebox" data-options="width:200,readonly:true,value:'0'" /></td>
+                    </tr>
+                    <tr style="display:none;">
+                        <td><label>回厂时间:</label></td>
+                        <td><input name="RetFacTime" id="RetFacTime" class="easyui-datetimebox" data-options="width:200,readonly:true,value:'0'" /></td>
+                    </tr>
+                    <tr style="display:none;">
+                        <td><label>到场时间:</label></td>
+                        <td><input name="ArrSiteTime" id="ArrSiteTime" class="easyui-datetimebox" data-options="width:200,readonly:true,value:'0'" /></td>
+                    </tr>
+                    <tr style="display:none;">
+                        <td><label>离场时间:</label></td>
+                        <td><input name="LeftSiteTime" id="LeftSiteTime" class="easyui-datetimebox" data-options="width:200,readonly:true,value:'0'" /></td>
+                    </tr>
+                    <tr style="display:none;">
+                        <td><label>开始卸料时间:</label></td>
+                        <td><input name="BeginUnloadTime" id="BeginUnloadTime" class="easyui-datetimebox" data-options="width:200,readonly:true,value:'0'" /></td>
+                    </tr>
+                    <tr style="display:none;">
+                        <td><label>结束卸料时间:</label></td>
+                        <td><input name="EndUnloadTime" id="EndUnloadTime" class="easyui-datetimebox" data-options="width:200,readonly:true,value:'0'" /></td>
+                    </tr>
+                    <tr style="display:none;">
+                        <td><label>工厂距离:</label></td>
+                        <td><input name="DistFactory" id="DistFactory" class="easyui-numberbox" data-options="width:200,required:true,value:1" /></td>
+                    </tr>
+                    <tr style="display:none;">
+                        <td><label>工地距离:</label></td>
+                        <td><input name="DistSite" id="DistSite" class="easyui-numberbox" data-options="width:200,required:true,value:1" /></td>
+                    </tr>
+                    <tr style="display:none;">
+                        <td><label>有效否:</label></td>
+                        <td>
+                            <input name="Valid" id="Valid" class="easyui-combobox" data-options="
+                                valueField: 'id',width:80,value:true,
+		                        textField: 'text',
+		                        data: [{
+			                        text: '有效',
+			                        id: true
+		                        },{
+			                        text: '无效',
+			                        id: false  
+		                        }]
+                                " />
+                        </td>
+                    </tr>
+                    <tr style="display:none;">
+                        <td><label>修改时间:</label></td>
+                        <td><input name="ModiDate" id="ModiDate" class="easyui-datetimebox" data-options="width:200,readonly:true,value:'0'" /></td>
+                    </tr>
+                    <tr style="display:none;">
+                        <td><label>修改人:</label></td>
+                        <td><input name="ModiId" id="ModiId" class="easyui-textbox" data-options="width:200,readonly:true,value:''" /></td>
+                    </tr>
+                    <tr style="display:none;">
+                        <td><label>InnerId:</label></td>
+                        <td><input name="InnerId" id="InnerId" class="easyui-textbox" data-options="width:200,readonly:true,value:''" /></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="operate">
+            <input type="button" id="save" value="确认" />
+        </div>
+    </div>
+    <script src="../libs/mui/js/mui.min.js"></script>
+	<script src="../libs/mui/js/mui.picker.min.js"></script>  
+    <script src="../js/common.js"></script>
+    <script src="../js/ship.js"></script>
+</body>
+</html>

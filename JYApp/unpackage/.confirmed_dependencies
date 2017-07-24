@@ -1,0 +1,373 @@
+{
+  "project/html/login.html": {
+    "resources": [
+      "project/css/project.css",
+      "project/libs/jquery/js/jquery.min.js",
+      "project/images/u1.png",
+      "project/js/common.js",
+      "project/libs/mui/js/mui.min.js",
+      "project/js/login.js",
+      "project/libs/jquery/js/jquery.cookie.js",
+      "project/libs/mui/css/mui.min.css",
+      "project/html/index.html",
+      "project/images/jtt_03.png",
+      "project/images/index_icons_30.png",
+      "project/html/region.html"
+    ],
+    "refer": [
+      "project/html/index.html",
+      "project/html/region.html"
+    ]
+  },
+  "project/html/index.html": {
+    "resources": [
+      "project/libs/mui/fonts/mui.ttf",
+      "project/js/index.js",
+      "project/images/index_icons_21.png",
+      "project/images/index_icons_14.png",
+      "project/images/index_icons_11.png",
+      "project/images/about_icons_03.png",
+      "project/images/index_icons_03.png",
+      "project/images/index_icons_38.png",
+      "project/images/banner_01.png",
+      "project/images/index_icons_18.png",
+      "project/images/index_icons_07.png",
+      "project/libs/jquery/js/jquery.min.js",
+      "project/libs/jquery/js/jquery.cookie.js",
+      "project/libs/mui/css/mui.min.css",
+      "project/libs/mui/js/mui.min.js",
+      "project/html/settings.html",
+      "project/html/login.html",
+      "project/html/task.html",
+      "project/html/taskList.html",
+      "project/html/checkList.html",
+      "project/html/shipList.html",
+      "project/html/driver.html",
+      "project/libs/mui/css/iconfont.css",
+      "project/libs/mui/fonts/iconfont.woff",
+      "project/html/trailMonitor.html"
+    ],
+    "refer": [
+      "project/html/settings.html",
+      "project/html/login.html",
+      "project/html/task.html",
+      "project/html/taskList.html",
+      "project/html/checkList.html",
+      "project/html/shipList.html",
+      "project/html/driver.html",
+      "project/html/trailMonitor.html"
+    ]
+  },
+  "project/html/settings.html": {
+    "resources": [
+      "project/js/settings.js",
+      "project/css/setting.css",
+      "project/libs/mui/js/mui.view.js",
+      "project/html/index.html",
+      "project/libs/jquery/js/jquery.cookie.js",
+      "project/images/about_icons_21.png",
+      "project/html/trailMonitor.html",
+      "project/images/about_icons_11.png",
+      "project/images/about_icons_17.png",
+      "project/images/about_icons_07.png",
+      "project/images/about_icons_14.png",
+      "project/html/login.html",
+      "project/libs/mui/fonts/mui.ttf",
+      "project/libs/jquery/js/jquery.min.js",
+      "project/libs/mui/css/iconfont.css",
+      "project/libs/mui/css/mui.min.css",
+      "project/images/about_icons_03.png",
+      "project/libs/mui/js/mui.min.js",
+      "project/libs/mui/fonts/iconfont.woff"
+    ],
+    "refer": [
+      "project/html/index.html",
+      "project/html/trailMonitor.html",
+      "project/html/login.html"
+    ]
+  },
+  "project/html/task.html": {
+    "resources": [
+      "project/libs/jquery/themes/metro/easyui.css",
+      "project/images/order_icons_07.png",
+      "project/libs/jquery/themes/color.css",
+      "project/libs/jquery/themes/icon.css",
+      "project/libs/jquery/themes/mobile.css",
+      "project/libs/jquery/jquery.easyui.mobile.js",
+      "project/js/task.js",
+      "project/images/order_icons_11.png",
+      "project/libs/jquery/locale/easyui-lang-zh_CN.js",
+      "project/libs/jquery/jquery.easyui.min.js",
+      "project/libs/jquery/themes/metro/images/combo_arrow.png",
+      "project/libs/jquery/themes/metro/images/datebox_arrow.png",
+      "project/libs/jquery/js/jquery.min.js",
+      "project/js/common.js",
+      "project/html/index.html",
+      "project/css/jcss.css",
+      "project/libs/mui/js/mui.min.js"
+    ],
+    "refer": [
+      "project/html/index.html"
+    ]
+  },
+  "project/html/taskList.html": {
+    "resources": [
+      "project/js/taskList.js",
+      "project/libs/mui/js/mui.pullToRefresh.material.js",
+      "project/libs/mui/js/mui.pullToRefresh.js",
+      "project/libs/mui/fonts/mui.ttf",
+      "project/libs/jquery/js/jquery.min.js",
+      "project/js/common.js",
+      "project/libs/mui/js/mui.min.js",
+      "project/libs/jquery/js/jquery.cookie.js",
+      "project/libs/mui/css/mui.min.css",
+      "project/html/taskDetail.html",
+      "project/html/index.html",
+      "project/css/project.css",
+      "project/css/jcss.css"
+    ],
+    "refer": [
+      "project/html/taskDetail.html",
+      "project/html/index.html"
+    ]
+  },
+  "project/html/taskDetail.html": {
+    "resources": [
+      "project/js/taskDetail.js",
+      "project/html/taskList.html",
+      "project/libs/jquery/themes/metro/easyui.css",
+      "project/libs/jquery/themes/color.css",
+      "project/libs/jquery/themes/icon.css",
+      "project/libs/jquery/themes/mobile.css",
+      "project/libs/jquery/jquery.easyui.mobile.js",
+      "project/libs/jquery/locale/easyui-lang-zh_CN.js",
+      "project/libs/jquery/jquery.easyui.min.js",
+      "project/libs/jquery/js/jquery.cookie.js",
+      "project/libs/jquery/themes/metro/images/combo_arrow.png",
+      "project/html/checkList.html",
+      "project/libs/jquery/js/jquery.min.js",
+      "project/js/common.js"
+    ],
+    "refer": [
+      "project/html/taskList.html",
+      "project/html/checkList.html"
+    ]
+  },
+  "project/html/checkList.html": {
+    "resources": [
+      "project/html/index.html",
+      "project/js/checkList.js",
+      "project/html/taskDetail.html"
+    ],
+    "refer": [
+      "project/html/index.html",
+      "project/html/taskDetail.html"
+    ]
+  },
+  "project/html/ship.html": {
+    "resources": [
+      "project/js/ship.js",
+      "project/libs/jquery/themes/metro/images/datebox_arrow.png",
+      "project/html/index.html",
+      "project/libs/jquery/themes/metro/images/blank.gif"
+    ],
+    "refer": [
+      "project/html/index.html"
+    ]
+  },
+  "project/html/shipList.html": {
+    "resources": [
+      "project/html/ship.html",
+      "project/js/shipList.js",
+      "project/html/index.html"
+    ],
+    "refer": [
+      "project/html/ship.html",
+      "project/html/index.html"
+    ]
+  },
+  "project/html/driver.html": {
+    "resources": [
+      "project/js/driver.js",
+      "project/html/index.html"
+    ],
+    "refer": [
+      "project/html/index.html"
+    ]
+  },
+  "project/html/trailMonitor.html": {
+    "resources": [
+      "project/js/trailMonitor.js",
+      "project/images/before_03.png",
+      "project/js/Config.js",
+      "project/js/commonMap.js",
+      "project/libs/mui/js/immersed.js",
+      "project/html/index.html",
+      "project/css/project.css",
+      "project/libs/jquery/js/jquery.min.js",
+      "project/libs/mui/js/mui.min.js",
+      "project/libs/mui/css/iconfont.css",
+      "project/libs/mui/css/mui.min.css",
+      "project/libs/mui/fonts/mui.ttf",
+      "project/libs/mui/fonts/iconfont.woff",
+      "project/images/after_03.png",
+      "project/html/cars_status.html",
+      "project/html/settings.html",
+      "project/html/cars_search.html",
+      "project/html/cars_detail.html",
+      "project/html/track_search.html",
+      "project/images/buttons_14.png",
+      "project/images/buttons_09.png",
+      "project/images/buttons_03.png",
+      "project/images/direction/direction_109.png",
+      "project/images/buttons_16.png",
+      "project/images/direction_118.png",
+      "project/images/loading.gif",
+      "project/images/buttons_10.png",
+      "project/images/direction/direction_112.png",
+      "project/images/direction/direction_107.png",
+      "project/images/buttons_05.png",
+      "project/images/direction/direction_06.png",
+      "project/images/direction/direction_18.png",
+      "project/images/direction/direction_12.png",
+      "project/images/direction/direction_16.png",
+      "project/images/direction/direction_08.png",
+      "project/images/direction/direction_03.png",
+      "project/images/direction/direction_14.png",
+      "project/images/direction/direction_10.png",
+      "project/images/direction/park_06.png",
+      "project/images/direction/park_04.png",
+      "project/images/click_20.png",
+      "project/images/direction/online_08.png",
+      "project/images/direction/park_05.png",
+      "project/images/direction/online_04.png",
+      "project/images/direction/park_07.png",
+      "project/images/direction/park_01.png",
+      "project/images/direction/park_08.png",
+      "project/images/direction/offline_07.png",
+      "project/images/direction/offline_03.png",
+      "project/images/direction/online_03.png",
+      "project/images/direction/online_06.png",
+      "project/images/direction/park_02.png",
+      "project/images/direction/offline_02.png",
+      "project/images/direction/offline_04.png",
+      "project/images/direction/warn_00.png",
+      "project/images/direction/online_02.png",
+      "project/images/direction/offline_08.png",
+      "project/images/direction/offline_01.png",
+      "project/images/direction/park_03.png",
+      "project/images/direction/online_01.png",
+      "project/images/direction/online_05.png"
+    ],
+    "refer": [
+      "project/html/index.html",
+      "project/html/cars_status.html",
+      "project/html/settings.html",
+      "project/html/cars_search.html",
+      "project/html/cars_detail.html",
+      "project/html/track_search.html"
+    ]
+  },
+  "project/html/cars_status.html": {
+    "resources": [
+      "project/libs/mui/js/mui.pullToRefresh.material.js",
+      "project/libs/mui/js/mui.pullToRefresh.js",
+      "project/js/cars_status.js",
+      "project/html/trailMonitor.html",
+      "project/html/cars_detail.html",
+      "project/libs/mui/fonts/mui.ttf",
+      "project/css/project.css",
+      "project/libs/jquery/js/jquery.min.js",
+      "project/js/common.js",
+      "project/libs/mui/js/mui.min.js",
+      "project/libs/mui/css/mui.min.css"
+    ],
+    "refer": [
+      "project/html/trailMonitor.html",
+      "project/html/cars_detail.html"
+    ]
+  },
+  "project/html/cars_search.html": {
+    "resources": [
+      "project/html/trailMonitor.html",
+      "project/js/cars_search.js",
+      "project/libs/mui/fonts/mui.ttf",
+      "project/css/project.css",
+      "project/libs/jquery/js/jquery.min.js",
+      "project/js/common.js",
+      "project/libs/mui/js/mui.min.js",
+      "project/libs/mui/css/mui.min.css"
+    ],
+    "refer": [
+      "project/html/trailMonitor.html"
+    ]
+  },
+  "project/html/cars_detail.html": {
+    "resources": [
+      "project/js/cars_detail.js",
+      "project/html/trailMonitor.html",
+      "project/html/cars_status.html",
+      "project/libs/mui/fonts/mui.ttf",
+      "project/css/project.css",
+      "project/libs/jquery/js/jquery.min.js",
+      "project/js/commonMap.js",
+      "project/js/common.js",
+      "project/libs/mui/js/mui.min.js",
+      "project/libs/mui/css/mui.min.css"
+    ],
+    "refer": [
+      "project/html/trailMonitor.html",
+      "project/html/cars_status.html"
+    ]
+  },
+  "project/html/track_play.html": {
+    "resources": [
+      "project/images/u659.png",
+      "project/js/track_play.js",
+      "project/images/lr_07.png",
+      "project/images/stop_icon_03.png",
+      "project/images/lr_03.png",
+      "project/libs/mui/fonts/mui.ttf",
+      "project/css/project.css",
+      "project/libs/jquery/js/jquery.min.js",
+      "project/js/commonMap.js",
+      "project/js/common.js",
+      "project/libs/mui/js/mui.min.js",
+      "project/libs/mui/css/mui.min.css",
+      "project/html/track_search.html",
+      "project/images/u655.png",
+      "project/images/Car.png",
+      "project/images/u698.png",
+      "project/images/u653.png"
+    ],
+    "refer": [
+      "project/html/track_search.html"
+    ]
+  },
+  "project/html/track_search.html": {
+    "resources": [
+      "project/libs/mui/css/mui.picker.min.css",
+      "project/js/track_search.js",
+      "project/libs/mui/js/mui.picker.min.js",
+      "project/html/trailMonitor.html",
+      "project/libs/mui/fonts/mui.ttf",
+      "project/css/project.css",
+      "project/libs/mui/js/mui.min.js",
+      "project/libs/mui/css/mui.min.css",
+      "project/html/track_play.html"
+    ],
+    "refer": [
+      "project/html/track_play.html",
+      "project/html/trailMonitor.html"
+    ]
+  },
+  "project/html/region.html": {
+    "resources": [
+      "project/js/region.js",
+      "project/html/login.html"
+    ],
+    "refer": [
+      "project/html/login.html"
+    ]
+  }
+}

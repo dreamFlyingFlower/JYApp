@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>监控中心</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="../libs/mui/css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../libs/mui/css/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/project.css"/>
+		<link href="http://api.map.baidu.com/library/TrafficControl/1.2/src/TrafficControl_min.css" rel="stylesheet" />
+        <!--<link rel="stylesheet" type="text/css" href="http://api.map.baidu.com/res/12/bmap.css"/>-->
+		<script type="text/javascript" src="../libs/mui/js/mui.min.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=GdnQDXlb8LsucghQAAdqGGc3trbK1272"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/library/TrafficControl/1.2/src/TrafficControl_min.js"></script>
+		<!--<script type="text/javascript" src="http://api.map.baidu.com/library/InfoBox/1.2/src/InfoBox_min.js"/></script>-->
+        <script type="text/javascript" src="../libs/jquery/js/jquery.min.js"></script>
+		<style>
+			p {
+				text-indent: 22px;
+                font-size:16px;
+			}
+			.trailMonitor_change li img {
+    			margin-top: -22px;
+			}
+			.mui-title{
+				color: #000;
+			}
+			input[type=search] {
+   				 height: 34px;
+   				 width:108%;
+   				 border-radius: 2px;
+   			}
+   			.mui-backdrop {
+			    position: fixed;
+			    top: 0;
+			    right: 0;
+			    bottom: 0;
+			    left: 0;
+			    z-index: 998;
+			    background:url(../images/loading.gif) no-repeat center rgba(0,0,0,.3);
+			}
+			.mui-icon-back:before,.mui-icon-left-nav:before{
+	        	color: #fff;
+	        	font-size: 24px;
+	        }
+		</style>
+	</head>
+	<body>
+		<div class="trailMonitor_search">
+			<div class="mui-search" style="margin-left: 3%;width: 75%;display: inline-block;height: 44px;">
+				<span class="mui-icon mui-icon-search"></span>
+				<input type="search" class="mui-input-clear" style="margin:0;background-color: #fff;position: absolute;border-radius: 20px;top: 5px; box-shadow: 0 2px 2px rgba(8,8,8,0.3);" placeholder="查车">
+			</div>
+			<div class="trailMonitor_change">
+				<a href="cars_status.html"><img id="image" src="../images/before_03.png" alt="loading" /></a>
+			</div>
+			<header class="mui-bar mui-bar-nav" style="display: none;background-color:#359ff2;"">
+			    <a class="mui-icon mui-icon-left-nav mui-pull-left" style="color: #FFF3F3;font-size: 15px;">返回</a>
+			    <h1 class="mui-title" style="color: #fff;">全景图</h1>
+			</header>
+		</div>
+
+		<div class="trailMonitor-change">
+			<img class="trailMonitor-panorama" src="../images/direction_118.png"/>
+			<img class="trailMonitor-multi" src="../images/buttons_05.png" alt="" />
+			<img class="trailMonitor-person" src="../images/buttons_10.png" alt="" />
+		</div>
+		<img class="trailMonitor-left" src="../images/buttons_14.png" alt="" />
+		<img class="trailMonitor-right" src="../images/buttons_16.png" alt="" />
+
+		<div id="allmap" style="top: 44px;"></div>
+
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item" href="index.html">
+				<span class="mui-icon mui-icon-home-filled"></span>
+				<span class="mui-tab-label">业务中心</span>
+			</a>
+			<a class="mui-tab-item mui-active" href="trailMonitor.html">
+	            <span class="mui-icon iconfont icon-guiji"></span>
+				<span class="mui-tab-label">监控中心</span>
+			</a>
+			<a id="about" class="mui-tab-item" href="settings.html">
+				<span class="mui-icon mui-icon-gear-filled"></span>
+				<span class="mui-tab-label">设置</span>
+			</a>
+		</nav>
+
+		<div id="BM-panorama"></div>
+
+		<script src="../js/Config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/commonMap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/trailMonitor.js" type="text/javascript" charset="utf-8"></script>
+		</div>
+	</body>
+</html>
+<script>
+	//点击图片切换
+	mui(document).on("tap", "#image", function() {
+		  $(this).attr('src',$(this).attr('src')=='../images/before_03.png'?'../images/after_03.png':'../images/before_03.png');
+	});
+</script>

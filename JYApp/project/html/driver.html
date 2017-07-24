@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+	    body, html {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+	</style>
+    <link rel="stylesheet" type="text/css" href="../libs/jquery/themes/metro/easyui.css" />  
+    <link rel="stylesheet" type="text/css" href="../libs/jquery/themes/mobile.css" />  
+    <link rel="stylesheet" type="text/css" href="../libs/jquery/themes/icon.css" />  
+    <link rel="stylesheet" type="text/css" href="../libs/jquery/themes/color.css" />
+    <link rel="stylesheet" type="text/css" href="../css/jcss.css"/>
+    <link rel="stylesheet" type="text/css" href="../libs/mui/css/mui.picker.min.css" />
+    <script type="text/javascript" src="../libs/jquery/js/jquery.min.js"></script>  
+    <script type="text/javascript" src="../libs/jquery/jquery.easyui.min.js"></script> 
+    <script type="text/javascript" src="../libs/jquery/jquery.easyui.mobile.js"></script> 
+    <script type="text/javascript" src="../libs/jquery/locale/easyui-lang-zh_CN.js"></script>
+    <title>车台长报单</title>
+    <style type="text/css">
+    	.m-back::before,.m-back::after{
+    		color: #fff;
+    	}
+    	.m-title{
+    		color: #fff;
+    	}
+    </style>
+</head>
+<body>
+    <div id="p1" class="easyui-navpanel">
+        <header style="background-color:#359ff2;">
+			<div class="m-toolbar" style="border:none;">
+				<span id="Span2" class="m-title">任务完工报单</span>
+                <div class="m-left" >
+                    <a href="javascript:void(0)" class="easyui-linkbutton m-back" plain="true"  onclick="$.mobile.back()" style="color:#fff;">
+                    	<span style="margin-left: 5px;font-size: 15px;">返回</span>
+                    </a>
+                </div>
+			</div>
+		</header>
+        <div>
+            <form id="carManagerForm" method="post" enctype="multipart/form-data" novalidate >
+                <table>
+                    <tr>
+                        <td style="color:blue;">编号: <input type="text" name="TaskId" value=" " readonly style="color:blue"/></td>
+                    </tr>
+                    <tr>
+                        <td>客户名称: <input type="text" name="Name" value=" " readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>计划方量: <input type="text" name="PlanTaskTotal" value=" " readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>车辆要求: <input type="text" name="VehicleType" value=" " readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>车牌号: <input type="text" name="FInnerId" value=" " readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>施工区域: <input type="text" name="SiteName" value=" " readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>派车日期: <input type="text" name="DeliverTime" value=" " readonly  /></td>
+                    </tr>
+                    <tr style="display:none;">
+                        <td>运输单:<input type="text" name="ShipId" value=" " readonly  /></td>
+                    </tr>
+                    <tr>
+                        <td>司机: <input type="text" name="DriverShip" value=" " readonly /></td>
+                    </tr>
+                <!--</table>-->
+                <!--<table>-->
+                    <tr>
+                    	<td>底单上传: <input name="Attach" id="Attach" type="file" /></td>
+                        <!--<td>底单上传:<input name="Attach" id="Attach" class="easyui-filebox" data-options="width:140,prompt:'请选择文件',buttonText:'选择',required:true"/>
+                            <a id="look" style="display:none;" href="javascript:void(0);" class="easyui-linkbutton" data-options="width:50,height:33">查看</a>
+                        </td>-->
+                    </tr>
+                    <tr>
+                        <td>开单日期:<input name="ReportTime" id="ReportTime" placeholder="请输入开单日期" readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>订单号:<input name="OrderId" id="OrderId" type="text" placeholder="请输入单据编号" data-options="required:true"/></td>
+                    </tr>
+                    <tr>
+                        <td>施工量:<input name="Quantity" id="Quantity"  class="easyui-numberbox" data-options="prompt:'请输入实际施工量'" required/></td>
+                    </tr>
+                    <tr>
+                        <td>客户加油:<input name="Oil" id="Oil" class="easyui-numberbox"  data-options="prompt:'请输入实际施工量'" required/></td>
+                    </tr>
+                    <tr>
+                        <td>备注:<input name="Memo" id="Memo" type="text" style="border-bottom:solid 1px blue;" /></td>
+                    </tr>
+                    
+
+                    <tr style="display:none;">
+                        <td><label>编号:</label></td>
+                        <td><input name="Id" id="Id" class="easyui-textbox" data-options="width:120,readonly:true" /></td>
+                    </tr>
+                    <!--<tr style="display:none;">
+                        <td><label>任务单号:</label></td>
+                        <td><input name="TaskId" id="TaskId" class="easyui-textbox" data-options="width:120,readonly:true" /></td>
+                    </tr>-->
+                    <tr style="display:none;">
+                        <td><label>有效否:</label></td>
+                        <td>
+                            <input name="Valid" id="Valid" class="easyui-combobox" data-options="
+                                valueField: 'id',width:80,value:true,
+		                        textField: 'text',
+		                        data: [{
+			                        text: '有效',
+			                        id: true
+		                        },{
+			                        text: '无效',
+			                        id: false  
+		                        }]
+                                " />
+                        </td>
+                    </tr>
+                    <tr style="display:none;">
+                        <td><label>创建时间:</label></td>
+                        <td><input name="InsertDate" id="InsertDate" class="easyui-datetimebox" data-options="width:200,readonly:true,value:'0'" /></td>
+                    </tr>
+                    <tr style="display:none;">
+                        <td><label>创建人:</label></td>
+                        <td><input name="InsertId" id="InsertId" class="easyui-textbox" data-options="width:200,readonly:true,required:true" /></td>
+                    </tr>
+                    <tr style="display:none;">
+                        <td><label>修改时间:</label></td>
+                        <td><input name="ModiDate" id="ModiDate" class="easyui-datetimebox" data-options="width:200,readonly:true,value:'0'" /></td>
+                    </tr>
+                    <tr style="display:none;">
+                        <td><label>修改人:</label></td>
+                        <td><input name="ModiId" id="ModiId" class="easyui-textbox" data-options="width:200,readonly:true,value:''" /></td>
+                    </tr>
+                    
+                </table>
+            </form>
+        </div>
+        <div class="operate">
+            <input type="button" id="save" value="确认" />
+        </div>
+        
+    </div>
+    <div id="p4" class="easyui-navpanel">
+	    <header>
+		    <div class="m-toolbar">
+			    <span id="Span3" class="m-title">附件查看</span>
+                <div class="m-left">
+                    <a href="javascript:void(0)" class="easyui-linkbutton m-back" onclick="$.mobile.back()">返回</a>
+                </div>
+		    </div>
+	    </header>
+        <div style="margin:15px 0 0;text-align:center;">
+            <img alt="请稍等"  />
+	    </div>
+    </div>
+    <script src="../libs/mui/js/mui.min.js" ></script>
+    <script src="../libs/mui/js/mui.picker.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/driver.js"></script>
+</body>
+</html>

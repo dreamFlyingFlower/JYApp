@@ -1,0 +1,321 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+	    body, html{width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+	</style>
+    <link rel="stylesheet" type="text/css" href="../libs/jquery/themes/metro/easyui.css" />  
+    <link rel="stylesheet" type="text/css" href="../libs/jquery/themes/mobile.css" />  
+    <link rel="stylesheet" type="text/css" href="../libs/jquery/themes/icon.css" />  
+    <link rel="stylesheet" type="text/css" href="../libs/jquery/themes/color.css" />
+    <link rel="stylesheet" type="text/css" href="../css/jcss.css"/>
+    <script type="text/javascript" src="../libs/jquery/js/jquery.min.js"></script>  
+    <script type="text/javascript" src="../libs/jquery/jquery.easyui.min.js"></script> 
+    <script type="text/javascript" src="../libs/jquery/jquery.easyui.mobile.js"></script> 
+    <script type="text/javascript" src="../libs/jquery/locale/easyui-lang-zh_CN.js"></script>
+    <title>任务详情</title>
+    <style>
+        .operate div{
+            display: none;
+        }
+        .operate div input{
+            border:none;
+            outline:none;
+            border-radius:4px;
+            padding:5px 15px;
+            color:#fff;
+        }
+        .business input{
+            background-color:#359ff2;
+        }
+        .check input,.check_close {
+            margin:0 30px;
+        }
+        .check input:first-child,.check_close:first-child {
+            background-color: #359ff2;
+        }
+        .check input:last-child,.check_close:last-child {
+            background-color: #e55835;
+        }
+        .ship{
+        	display: none;
+        }
+        .report{
+        	display: none;
+        }
+        .m-title{
+        	color: #fff;
+        }
+    	.m-back::before,.m-back::after{
+    		color: #fff;
+    	}
+    </style>
+</head>
+<body>
+    <div id="p1" class="easyui-navpanel">
+        <header style="background-color:#359ff2;">
+			<div class="m-toolbar">
+				<span id="Span2" class="m-title">任务详情</span>
+                <div class="m-left" >
+                    <a href="javascript:void(0);" class="easyui-linkbutton m-back" plain="true" style="color: #fff;">
+                    	<span style="margin-left: 5px;font-size: 15px;">返回</span>
+                    </a>
+                </div>
+			</div>
+		</header>
+        <div>
+            <form id="taskForm" method="post" novalidate>
+                <table>
+                    <tr style="border:none;color:blue;">
+                        <td><label>任务单号:</label><input name="Id" id="Id" class="easyui-textbox" data-options="width:120,readonly:true" /></td>
+                    </tr>
+                    <tr style="display: none;">
+                        <td>审核否:<input name="Valid" id="Valid" class="easyui-textbox" style="width:80%" data-options="readonly:true" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>任务状态:<input name="State" id="State" class="easyui-textbox" data-options="width:200,readonly:true" /></td>
+                    </tr>
+                    <tr  style="display:none;">
+                        <td><label>关闭否:</label>
+                            <input name="Closed" id="Closed" class="easyui-combobox" data-options="
+                                valueField: 'id',width:200,value:'0',readonly:true,
+		                        textField: 'text',
+		                        data: [{
+			                        text: '正常',
+			                        id: '0'
+		                        },{
+			                        text: '申请撤单',
+			                        id: '1'
+		                        },{
+			                        text: '关闭',
+			                        id: '2'
+		                        }]
+                                " />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>业务代表:</label><input style="" name="InsertId" id="InsertId" class="easyui-textbox" data-options="readonly:true" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>车型:</label><input name="VehicleType" id="VehicleType" class="easyui-textbox" data-options="width:200,readonly:true" /></td>
+                    </tr>
+                    <tr style="display:none;">
+                        <td><label>客户代码:</label><input name="JobTitle" id="JobTitle" class="easyui-textbox" data-options="width:200,readonly:true" /></td>
+                    </tr>
+                    <tr style="display:none;">
+                        <td><label>客户代码:</label><input name="Client" id="Client" class="easyui-textbox" data-options="width:200,readonly:true" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>客户名称:</label><input name="Name" id="Name" class="easyui-textbox" 
+                            data-options="readonly:true " /></td>
+                    </tr>
+                    <tr>
+                        <td><label>施工地:</label><input name="SiteName" id="SiteName" class="easyui-textbox" data-options="width:200,readonly:true" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>租赁方式:</label>
+                            <input name="RentType" id="RentType" class="easyui-textbox"  data-options="readonly:true">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>计划量:</label><input name="PlanTaskTotal" id="PlanTaskTotal" class="easyui-textbox" data-options="readonly:true" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>合同单价:</label><input name="RentUnitPrice" id="RentUnitPrice" class="easyui-textbox" data-options="readonly:true" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>计划开盘时间:</label><input name="PlanBeginTime" id="PlanBeginTime" class="easyui-textbox" data-options="readonly:true,width:200" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>计划收盘时间:</label><input name="PlanEndTime" id="PlanEndTime" class="easyui-textbox" data-options="readonly:true,width:200" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>联系人:</label><input name="Contact" id="Contact" class="easyui-textbox" data-options="readonly:true,width:200" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>联系电话:</label><input name="Tel" id="Tel" class="easyui-textbox" data-options="readonly:true,width:200" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>备注:</label><input name="Memo" id="Memo" class="easyui-textbox" data-options="width:200,readonly:true" /></td>
+                    </tr>
+
+
+                    <tr style="display:none">
+                        <td><label>泵车属性:</label>
+                            <select name="Type1" id="Type1" class="easyui-combobox" style="width:200px;">
+                                <option value="1" selected="selected">内泵</option>
+                                <option value="2">外泵</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr style="display:none">
+                        <td><label>配比单号:</label></td>
+                        <td><input name="MixId" id="MixId" class="easyui-textbox" data-options="width:200" value=""/></td>
+                    </tr>
+                    <tr style="display:none">
+                        <td><label>内部任务单号:</label></td>
+                        <td><input name="InnerId" id="InnerId" class="easyui-textbox" data-options="width:200" value=""/></td>
+                    </tr>
+                    <tr style="display:none">
+                        <td><label>自定义:</label></td>
+                        <td><input name="UerDefine" id="UerDefine" class="easyui-textbox" data-options="width:200" value=""/></td>
+                    </tr>
+                    <tr style="display:none">
+                        <td><label>生产厂区:</label></td>
+                        <td><input name="Factory" id="Factory" class="easyui-textbox" data-options="width:200" value="RG17030001"/></td>
+                    </tr>
+                    <tr style="display:none">
+                        <td><label>工地:</label></td>
+                        <td><input name="Site" id="Site" class="easyui-textbox" data-options="width:200" value="RG17030002"/></td>
+                    </tr>
+                    <tr style="display:none">
+                        <td><label>产品标号:</label></td>
+                        <td><input name="Grade" id="Grade" class="easyui-textbox" data-options="width:200,value:'C30'" /></td>
+                    </tr>
+                    <tr style="display:none">
+                        <td><label>施工部位:</label></td>
+                        <td><input name="Position" id="Position" class="easyui-textbox" data-options="width:200,value:''" /></td>
+                    </tr>
+                    <tr style="display:none">
+                        <td><label>坍落度:</label></td>
+                        <td><input name="SlumpCone" id="SlumpCone" class="easyui-textbox" data-options="width:200,value:'70'" /></td>
+                    </tr>
+                    <tr style="display:none">
+                        <td><label>抗渗等级:</label></td>
+                        <td>
+                            <select name="Imper" id="Imper" class="easyui-combobox" style="width:200px;">
+                                <option value="1" selected="selected">S2</option>
+                                <option value="2">S4</option>
+                                <option value="3">S6</option>
+                                <option value="4">S8</option>
+                                <option value="5">S10</option>
+                                <option value="6">S12</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr style="display:none">
+                        <td><label>浇注方式:</label></td>
+                        <td>
+                            <select name="PourType" id="PourType" class="easyui-combobox" style="width:200px;">
+                                <option value="1" selected="selected">泵送</option>
+                                <option value="2">自卸</option>
+                                <option value="3">塔调</option>
+                                <option value="0">其他</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr style="display:none">
+                        <td><label>默认车辆:</label></td>
+                        <td><input name="VehicleNum" id="VehicleNum" class="easyui-textbox" data-options="width:200,value:''" /></td>
+                    </tr>
+                    <tr style="display:none">
+                        <td><label>默认司机:</label></td>
+                        <td><input name="Driver" id="Driver" class="easyui-textbox" data-options="width:200,value:''" /></td>
+                    </tr>
+                    <tr style="display:none">
+                        <td><label>运输运距:</label></td>
+                        <td><input name="Distance" id="Distance" class="easyui-textbox" data-options="width:200,value:0" /></td>
+                    </tr>
+                    <tr style="display:none">
+                        <td><label>工程合同:</label></td>
+                        <td><input name="Contract" id="Contract" class="easyui-textbox" data-options="width:200,value:''" /></td>
+                    </tr>
+                    <tr style="display:none">
+                        <td><label>工程预计方量:</label></td>
+                        <td><input name="PlanProjTotal" id="PlanProjTotal" class="easyui-textbox" data-options="width:200,value:0" /></td>
+                    </tr>
+                    <tr style="display:none">
+                        <td><label>运送次数:</label></td>
+                        <td><input name="ShipCount" id="ShipCount" class="easyui-textbox" data-options="width:200,value:0" /></td>
+                    </tr>
+                    <tr style="display:none">
+                        <td><label>运送消耗时间:</label></td>
+                        <td><input name="ShipTime" id="ShipTime" class="easyui-numberbox" data-options="width:200,value:0" /></td>
+                    </tr>
+                    <tr style="display:none">
+                        <td><label>已送数量:</label></td>
+                        <td><input name="DeliveryQty" id="DeliveryQty" class="easyui-textbox" data-options="width:200,value:0" /></td>
+                    </tr>
+                    <tr style="display:none">
+                        <td><label>卸料消耗时间:</label></td>
+                        <td><input name="UnloadTime" id="UnloadTime" class="easyui-numberbox" data-options="width:200,value:0" /></td>
+                    </tr>
+                    <tr style="display:none">
+                        <td><label>创建时间:</label></td>
+                        <td><input name="InsertDate" id="InsertDate" class="easyui-datetimebox" data-options="width:200,readonly:true,value:'0'" /></td>
+                    </tr>
+                    <tr style="display:none">
+                        <td><label>修改时间:</label></td>
+                        <td><input name="ModiDate" id="ModiDate" class="easyui-datetimebox" data-options="width:200,showSeconds:true,readonly:true,value:'0'" /></td>
+                    </tr>
+                    <tr style="display:none">
+                        <td><label>修改人:</label></td>
+                        <td><input name="ModiId" id="ModiId" class="easyui-textbox" data-options="width:200,readonly:true,value:''" /></td>
+                    </tr>
+                    <tr style="display:none">
+                        <td><label>其它要求:</label></td>
+                        <td><input name="Other" id="Other" class="easyui-textbox" data-options="width:200,height:60,multiline:true" /></td>
+                    </tr>
+                	<!--派车部分-->
+                	<tr class="ship">
+                        <td><label>运输单号:</label><input name="ShipId" id="ShipId" class="easyui-textbox" data-options="readonly:true,width:200" /></td>
+                    </tr>
+                    <tr class="ship">
+                        <td><label>车牌号:</label><input name="FInnerId" id="FInnerId" class="easyui-textbox" data-options="readonly:true,width:200" /></td>
+                    </tr>
+                    <tr class="ship">
+                        <td><label>外租否:</label><input name="Rent" id="Rent" class="easyui-textbox" data-options="readonly:true,width:200" /></td>
+                    </tr>
+                    <tr class="ship">
+                        <td><label>司机:</label><input name="ShipDriver" id="ShipDriver" class="easyui-textbox" data-options="readonly:true,width:200" /></td>
+                    </tr>
+                    <tr class="ship">
+                        <td><label>状态:</label><input name="ShipState" id="ShipState" class="easyui-textbox" data-options="readonly:true,width:200" /></td>
+                    </tr>
+                    <tr class="ship">
+                        <td><label>数量:</label><input name="ShipQty" id="ShipQty" class="easyui-textbox" data-options="readonly:true,width:200" /></td>
+                    </tr>
+                    <!--报单部分-->
+                	<tr class="report">
+                        <td><label>报单号:</label><input name="ReportId" id="ReportId" class="easyui-textbox" data-options="readonly:true,width:200" /></td>
+                    </tr>
+                    <tr class="report">
+                        <td><label>报单时间:</label><input name="ReportTime" id="ReportTime" class="easyui-textbox" data-options="readonly:true,width:200" /></td>
+                    </tr>
+                    <tr class="report">
+                        <td><label>订单号:</label><input name="OrderId" id="OrderId" class="easyui-textbox" data-options="readonly:true,width:200" /></td>
+                    </tr>
+                    <tr class="report">
+                        <td><label>实际量:</label><input name="Quantity" id="Quantity" class="easyui-textbox" data-options="readonly:true,width:200" /></td>
+                    </tr>
+                    <tr class="report">
+                        <td><label>实际加油量:</label><input name="Oil" id="Oil" class="easyui-textbox" data-options="readonly:true,width:200" /></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="operate">
+            <div class="business">
+                <input type="button" id="closeit" value="申请关闭"/>
+            </div>
+            <div class="check">
+                <input type="button" id="applyPass" value="申请通过" />
+                <input type="button" id="applyReject" value="驳回申请" />
+            </div>
+            <div class="check_close">
+                <input type="button" id="closePass" value="撤销通过" />
+                <input type="button" id="closeReject" value="撤销驳回" />
+            </div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <script src="../libs/mui/js/mui.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/taskDetail.js"></script>
+</body>
+</html>

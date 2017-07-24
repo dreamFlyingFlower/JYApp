@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>轨迹回放</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="../libs/mui/css/mui.min.css">
+		<link rel="stylesheet" href="../css/project.css" />
+		<script type="text/javascript" src="../libs/jquery/js/jquery.min.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=GdnQDXlb8LsucghQAAdqGGc3trbK1272"></script>
+		<style>
+			.mui-progressbar-success span {
+				background-color: #4cd964;
+			}
+			.track_header_a img {
+			    width: 25px;
+			}
+			.mui-input-range input[type=range] {
+			    width: 96%;
+			    margin: 17px 2%;
+    		}
+    		.mui-title{
+	        	color: #fff;
+	        }
+			.mui-icon-back:before,.mui-icon-left-nav:before{
+        		color: #fff;
+        		font-size: 24px;
+        	}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color:#359ff2">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #FFF3F3;font-size: 15px;">返回</a>
+		    <h1 class="mui-title" id="cars"></h1>
+		</header>
+		<div id="detail" class="track_detail">
+			<ul class="track-play-zero clearfix">
+				<li class="track-time fl">定位时间:<a></a></li>
+				<li class="fr">
+					<span style="display: inline-block;float: left;">过滤0速度值</span>
+				    <div class="mui-switch mui-switch-mini mui-active " style="display: inline-block;width: 40px;height: 20px;">
+				        <div class="mui-switch-handle" style="height: 20px;width: 20px;top: -2px;left: 0;"></div>
+				    </div>
+				</li>
+			</ul>
+			<div class="track_detail_all">
+				<ul class="clearfix">
+					<li>速度<br><a href="javascript:void(0);">0</a>km/h</li>
+					<li>回放里程<br><a href="javascript:void(0);">0</a>km</li>
+					<li>方向<br><a href="javascript:void(0);"></a></li>
+					<li style="border: none;">油量<br><a href="javascript:void(0);">0</a>L</li>
+				</ul>
+				<ul class="clearfix track_address">
+					<li><a href="javascript:void(0);" class="mui-ellipsis">查询中...</a></li>
+					<li><a href="javascript:void(0);" class="mui-ellipsis">查询中...</a></li>
+				</ul>
+			</div>
+
+			<nav class="mui-bar mui-bar-tab" style="position: relative;">
+				<div class="mui-input-row mui-input-range track_progress_div" style="padding: 0;">
+		            <input type="range" id='block-range' value="0" min="0" max="100" style="padding: 0;height: 8px;">
+		        </div>
+				<div class="track_operate">
+					<ul>
+						<li><a href="javascript:void(0);" ><img class="track_slow" src="../images/lr_03.png"/><span></span></a></li>
+						<li>
+							<img class="track_play" src="../images/u659.png"/>
+							<img class="track_end" src="../images/stop_icon_03.png" alt="" />
+						</li>
+						<li><a href="javascript:void(0);" ><span></span><img class="track_quick" src="../images/lr_07.png"/></a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div id="allmap"></div>
+		<script type="text/javascript" src="../libs/mui/js/mui.min.js"></script>
+		<script src="../js/commonMap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/track_play.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

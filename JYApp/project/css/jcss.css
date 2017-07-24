@@ -1,0 +1,75 @@
+/*-------本css只是对easyui的样式重写--------*/
+*{
+	box-sizing: border-box;
+}
+body,html{
+	font-size: 16px;
+	font-family: 'Helvetica Neue',Helvetica,sans-serif,"微软雅黑";
+}
+.m-toolbar .m-title{
+	font-weight: normal;
+}
+form {
+    margin:0 5px;
+}
+form table {
+    border-collapse:collapse;
+    border-radius:4px;
+    width:100%;
+}
+form table tr {
+    height:44px;
+    font-size: 15px;
+    border-bottom: solid 1px #ccc;
+}
+form table tr td {
+    padding-left: 5px;
+}
+form table tr td img {
+    width:20px;
+    height:20px;
+    float:left;
+    margin-top:3px;
+}
+form table input {
+    border: none;
+    outline: none;
+    margin:0;
+    padding:0;
+    width:60%;
+}
+.textbox {
+    border: none;
+}
+.textbox.textbox-readonly {
+    border:none;
+}
+.textbox.textbox-invalid {
+    border: none;
+}
+.textbox.combo {
+    border:none;
+}
+.textbox.numberbox {
+    border: none;
+}
+.validatebox-invalid {
+    background-color:#fff;
+}
+.operate {
+    margin-top:10px;
+    width:100%;
+    text-align:center;
+}
+.operate input {
+    border:none;
+    outline:none;
+    border-radius:4px;
+    padding:5px 15px;
+    color:#fff;
+    background-color: #359ff2;
+    display:inline-block;
+    font-size: 15px;
+    width:100px;
+    height:28px;
+}

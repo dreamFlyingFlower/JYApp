@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="../libs/mui/css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/project.css"/>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=GdnQDXlb8LsucghQAAdqGGc3trbK1272"></script>
+		<script type="text/javascript" src="../libs/jquery/js/jquery.min.js"></script>
+		<script src="../js/commonMap.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css" media="screen">
+			.mui-title{
+	        	color: #fff;
+	        }
+			.mui-icon-back:before,.mui-icon-left-nav:before{
+        		color: #fff;
+        		font-size: 24px;
+        	}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color:#359ff2">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #FFF3F3;font-size: 15px;">返回</a>
+			<h1 id="title" class="mui-title"></h1>
+		</header>
+		<div id="allmap"></div>
+		<div class="cars_detail_all">
+			<div class="cars_detail">
+				<ul style="padding-top:5px">
+					<li>定位时间:<span></span><a class="cars_detail_online" href="javascript:void(0);"></a></li>
+					<li>车牌号:&nbsp;<a href="javascript:void(0);"></a></li>
+					<li>速度:&nbsp;<a href="javascript:void(0);"></a>km/h</li>
+					<li>里程:&nbsp;<a href="javascript:void(0);"></a>km</li>
+					<li>油量:&nbsp;<a href="javascript:void(0);"></a>L</li>
+					<li>方向:&nbsp;<a href="javascript:void(0);"></a></li>
+					<li>状态:&nbsp;<a href="javascript:void(0);"></a></li>
+					<li>报警:&nbsp;<a href="javascript:void(0);"></a></li>
+					<li>位置:&nbsp;<a href="javascript:void(0);"></a></li>
+					<li>电话:&nbsp;<a href="javascript:void(0);" id="#tel"></a></li>
+				</ul>
+			</div>
+			<hr />
+			<div class="cars_detail_user">
+				<ul>
+					<li>所属用户:&nbsp;<a href="javascript:void(0);">武汉佳裕电子</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="detail-cover"></div>
+		<nav class="mui-bar mui-bar-tab" style="display: none;">
+			<a id="telphone" class="mui-tab-item mui-active">
+				<span class="mui-icon mui-icon-phone-filled"></span>
+			</a>
+			<a id="message" class="mui-tab-item">
+				<span class="mui-icon mui-icon-chat"></span>
+			</a>
+			<a id="location" class="mui-tab-item" >
+				<span class="mui-icon mui-icon-gear"></span>
+			</a>
+		</nav>
+		<script type="text/javascript" src="../libs/mui/js/mui.min.js"></script>
+		<script>
+			mui.init({
+				swipeBack: false,
+			});
+		</script>
+		<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/cars_detail.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

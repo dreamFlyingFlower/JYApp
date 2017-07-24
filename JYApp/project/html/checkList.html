@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>快速审批</title>
+	<link rel="stylesheet" type="text/css" href="../libs/mui/css/mui.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/project.css"/>
+	<script src="../libs/mui/js/mui.min.js"></script>
+    <script src="../libs/jquery/js/jquery.min.js"></script>
+    <style type="text/css">
+    	.mui-title{
+        	color: #fff;
+        }
+        .mui-icon-back:before,.mui-icon-left-nav:before{
+        	color: #fff;
+        	font-size: 24px;
+        }
+        .mui-segmented-control.mui-scroll-wrapper .mui-scroll .mui-control-item{
+            width:24%;
+        }
+    </style>
+</head>
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color:#359ff2">
+		    <a class="mui-icon mui-icon-left-nav mui-pull-left" style="color: #FFF3F3;font-size: 15px;">返回</a>
+		    <h1 class="mui-title">快速审批</h1>
+		</header>
+		<div class="mui-content">
+			<div id="slider" class="mui-slider mui-fullscreen">
+				<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<div class="mui-scroll" style="width:100%;">
+						<a class="mui-control-item mui-active" href="#waitCheckList">待审核<span class="mui-badge mui-badge-primary mui-plus-visible"></span></a>
+						<a class="mui-control-item" href="#checkAlreadyList">已审核<span class="mui-badge mui-badge-primary mui-plus-visible"></span></a>
+						<a class="mui-control-item" href="#finishList">驳回<span class="mui-badge mui-badge-primary mui-plus-visible"></span></a>
+						<a class="mui-control-item" href="#closedList">申请关闭<span class="mui-badge mui-badge-primary" style="display:none;"></span></a>
+					</div>
+				</div>
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-3"></div>
+				<div class="mui-slider-group">
+					<div id="waitCheckList" class="mui-slider-item mui-control-content mui-active">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="checkAlreadyList" class="mui-slider-item mui-control-content">
+						<div id="Div1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="finishList" class="mui-slider-item mui-control-content">
+						<div id="Div2" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="closedList" class="mui-slider-item mui-control-content">
+						<div id="Div2" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../libs/mui/js/mui.pullToRefresh.js"></script>
+		<script src="../libs/mui/js/mui.pullToRefresh.material.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/checkList.js"></script>
+	</body>
+</html>

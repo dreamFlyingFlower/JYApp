@@ -1,0 +1,491 @@
+/*-----自定义样式 start-----*/
+html,body{
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	font-size: 16px;
+	font-family: 'Helvetica Neue',Helvetica,sans-serif,"微软雅黑";
+}
+html,body,ul,li,img,span,textarea{
+	margin: 0;
+	padding: 0;
+}
+
+#allmap{
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+a{
+	text-decoration: none;
+}
+li{
+	list-style: none;
+}
+@keyframes shadow
+{
+	from {background-image: url(../images/buttons_16.png);}
+	to {background-image: url(../images/click_20.png);}
+}
+/*-----自定义样式 end*/
+/*重写百度api样式*/
+#allmap{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	font-size: 15px;
+}
+#BM-panorama{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: none;
+}
+/*百度弹出框样式透明度*/
+.BMap_pop{
+	opacity: 0.8;
+}
+/*百度地图下放logo消除*/
+.anchorBL a{
+	display:none;
+}
+/*-----login start-----*/
+.login_back{
+	width: 100%;
+	height: 200px;
+	margin: 0;
+	padding: 0;
+	background: url(../images/u1.png) #fff no-repeat top left;
+	background-size: 100% 100%;
+	text-align: center;
+}
+.login-region{
+	position: absolute;
+	bottom: 7px;
+	right: 0;
+	width: 9px;
+}
+.login_user{
+	position: relative;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	text-align: center;
+}
+.login_user label{
+	text-align: left;
+	margin-left: 10%;
+	float: left;
+}
+.login_user ul{
+	margin-top: 24px;
+}
+.login_user li{
+	width: 80%;
+	border-bottom: solid 1px #bcbcbc;
+	margin: 5% 10%;
+	text-align: left;
+}
+.login_user ul input{
+	display: inline-block;
+	margin: 0;
+	margin-left: 10px;
+	border: none;
+	outline: none;
+	padding: 0;
+	max-width: 80%;
+}
+.login_user .remeber{
+	border: none;
+}
+.login_user input[type=button]{
+	display: inline-block;
+	height: 40px;
+	width: 80%;
+	margin: 5% 10%;
+	background-color: #449ef2;
+	font-size: 20px;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+}
+.login-footer{
+	position: relative;
+	right: 35px;
+	text-align: right;	
+}
+.appName{
+	font-family: "黑体";
+	font-size: 28px;
+	display: inline-block;
+	margin-top: 40px;
+	color: #449ef2;
+	font-weight: bold;
+}
+.appName img{
+	height: 34px;
+}
+/*-----login end-----*/
+
+/*-------------region----------------*/
+.region-province{
+	display: inline-block;
+	width: 30%;
+	background-color: #fff;
+	overflow: auto;
+	float: left;
+	border-right: solid 1px #008000;
+}
+.region-province li{
+	text-align: center;
+	padding: 5px 0;
+	border-bottom: solid 1px #008000;
+	color: #000;
+}
+.region-province li a{
+	color: #000;
+}
+.region-list{
+	display: inline-block;
+	float: right;
+	width: 70%;
+	text-align: center;
+	overflow: auto;
+}
+.region-list li div ul li{
+	padding: 5px 0;
+	border-bottom: solid 1px #222222;
+}
+.region-active{
+	background-color: lightgreen;
+}
+/*-------------region----------------*/
+
+/*-------------详情----------------*/
+.task_detail{
+	display: inline-block;
+	float: right;
+	color: green;
+}
+.cars_detail_online {
+    display: inline-block;
+    float: right;
+    color: white;
+    padding: 2px 5px;
+	border-radius: 3px;
+}
+.detail-cover{
+	position: absolute;
+	bottom: 50px;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,0);
+}
+/*-------------详情 end----------------*/
+
+/*-------------下拉刷新 start----------*/
+.mui-bar~.mui-content .mui-fullscreen {
+	top: 44px;
+	height: auto;
+}
+.mui-pull-top-tips {
+	position: absolute;
+	top: -20px;
+	left: 50%;
+	margin-left: -25px;
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
+	z-index: 1;
+}
+.mui-bar~.mui-pull-top-tips {
+	top: 24px;
+}
+.mui-pull-top-wrapper {
+	width: 42px;
+	height: 42px;
+	display: block;
+	text-align: center;
+	background-color: #efeff4;
+	border: 1px solid #ddd;
+	border-radius: 25px;
+	background-clip: padding-box;
+	box-shadow: 0 4px 10px #bbb;
+	overflow: hidden;
+}
+.mui-pull-top-tips.mui-transitioning {
+	-webkit-transition-duration: 200ms;
+	transition-duration: 200ms;
+}
+.mui-pull-top-tips .mui-pull-loading {
+	/*-webkit-backface-visibility: hidden;
+	-webkit-transition-duration: 400ms;
+	transition-duration: 400ms;*/
+	margin: 0;
+}
+.mui-pull-top-wrapper .mui-icon,
+.mui-pull-top-wrapper .mui-spinner {
+	margin-top: 7px;
+}
+.mui-pull-top-wrapper .mui-icon.mui-reverse {
+	/*-webkit-transform: rotate(180deg) translateZ(0);*/
+}
+.mui-pull-bottom-tips {
+	text-align: center;
+	background-color: #efeff4;
+	font-size: 15px;
+	line-height: 40px;
+	color: #777;
+}
+.mui-pull-top-canvas {
+	overflow: hidden;
+	background-color: #fafafa;
+	border-radius: 40px;
+	box-shadow: 0 4px 10px #bbb;
+	width: 40px;
+	height: 40px;
+	margin: 0 auto;
+}
+.mui-pull-top-canvas canvas {
+	width: 40px;
+}
+.mui-slider-indicator.mui-segmented-control {
+	background-color: #efeff4;
+}
+.mui-segmented-control.mui-scroll-wrapper .mui-scroll .mui-control-item{
+    display:inline-block;
+    margin:0;
+    padding:0;
+    font-size:14px;
+    width:33%;
+}
+.mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item{
+	border-top: none;
+}
+.mui-table-view-cell div{
+    width: 50%;
+	float: left;
+    font-size:12px;
+}
+.mui-title{
+	color: #fff;
+}
+/*------------下拉刷新 end-------------*/
+
+/*-------------trailmonitor start--------------*/
+.trailMonitor_search{
+	position: absolute;
+	z-index: 10;
+	width: 100%;
+	height: 44px;
+	background-color:#359ff2
+}
+.trailMonitor_search span {
+    position: absolute;
+    z-index: 100;
+    top: 10px;
+    right: -10px;
+}
+.trailMonitor_change{
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+	float: right;
+	margin-right: 3%;
+}
+.trailMonitor_change img{
+	width: 44px;
+	height: 44px;
+}
+.trailMonitor_info_li{
+	float: left;
+	width: 50%;
+	border-right: solid 1px #ccc;
+}
+.trailMonitor_info_li~li{
+	margin-top: 7px;
+}
+.trailMonitor_info_li a{
+	font-size: 17px;
+	font-weight: bold;
+	color: #4fba6f;
+}
+.trailMonitor_info_li~li a{
+	font-size: 17px;
+	font-weight: bold;
+	color: #4fba6f;
+}
+.trailMonitor-change{
+	position: absolute;
+	z-index: 10;
+	bottom: 230px;
+	right: 0;
+}
+.trailMonitor-change img{
+	display: block;
+	width: 40px;
+	height: 40px;
+	margin-top: 10px;
+}
+.trailMonitor-left,.trailMonitor-right{
+	position: absolute;
+	z-index: 10;
+	width: 40px;
+	height: 40px;
+}
+.trailMonitor-left{
+	bottom: 150px;
+	left: 100px;
+}
+.trailMonitor-right{
+	bottom: 150px;
+	right: 100px;
+}
+/*-------------trailmonitor end--------------*/
+
+/*----------------------cars start----------------------*/
+.cars_search_latest{
+	height: 40px;
+	text-align: center;
+}
+.cars_search_latest li{
+	display: inline-block;
+	float: left;
+	width: 33%;
+	line-height: 40px;
+}
+.cars_search_rs{
+	display: none;
+}
+.cars_speed {
+	display: inline-block;
+	float: right;
+	font-size: 12px;
+	font-weight: normal;
+}
+.mui-slider .mui-slider-group .mui-control-content .cars_img{
+	width: 10px;
+	height: 15px;
+	float: left;
+	margin: 30px 10px 25px 0;
+}
+.cars_detail_all{
+	position: fixed;
+	opacity: 0.8;
+	bottom: 0;
+	width: 100%;
+	background-color: #fff;
+	z-index: 10;
+	padding: 0 10px;
+}
+.cars_online{
+	color: green;
+	display: inline-block;
+	float: right;
+}
+.cars_status_img{
+	text-align: center;
+}
+.cars_status_img span{
+	display: block;
+}
+.mui-slider .mui-slider-group .mui-slider-item img{
+	width: 30px;
+	margin-right: 12px;
+}
+/*----------------------cars end----------------------*/
+
+/*--------------------track start------------------------*/
+.track_detail{
+    position: fixed;
+    opacity: 0.8;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 10;
+}
+.track-play-zero{
+	width: 100%;
+	font-size: 14px;
+}
+.track-play-zero li{
+	display: inline-block;
+}
+.track_detail_all ul li{
+	float: left;
+	width: 25%;
+	font-size: 14px;
+	text-align: center;
+	color: #222222;
+	border-right: solid 1px #ccc;
+}
+.track_detail_all .track_address li{
+	float: none;
+	width: 100%;
+	border: none;
+	text-align: left;
+}
+.track_detail_all .track_address li a{
+	color: #000;
+}
+.track_operate{
+	text-align: center;
+}
+.track_operate ul li{
+	display: inline-block;
+}
+.track_operate ul li a{
+	display: inline-block;
+}
+.track_operate ul li span{
+	display: inline-block;
+	width: 20px;
+	line-height: 32px;
+}
+.track_operate ul li:nth-child(1){
+	float: left;
+}
+.track_operate ul li:nth-child(3){
+	float: right;
+}
+.track_slow{
+	float: left;
+    width: 30px;
+}
+.track_quick{
+    width: 30px;
+    float: right;
+}
+.track_play,.track_end{
+    width: 30px;
+}
+/*--------------------track start------------------------*/
+
+
+/*-----------通用 start----------*/
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.clearfix:before,.clearfix:after{
+	display: block;
+	content: "";
+}
+.clearfix:after{
+	clear: both;
+}
+/*背景颜色*/
+.bcolor-gray{
+	background-color: gray;
+}
+.bcolor-red{
+	background-color: red;
+}
+/*字体颜色*/
+.color-gray{
+	color: gray;
+}
+/*-----------通用 end-------*/
